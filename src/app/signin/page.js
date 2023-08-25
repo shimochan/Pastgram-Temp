@@ -16,13 +16,18 @@ const LoginForm = () => {
 
   return (
     <Container className={styles.container} maxWidth="xs">
-      <form onSubmit={handleLogin}>
+      <Typography className={styles.logo} variant="h5" align="center">
+        Pastgram
+      </Typography>
+      <form className={styles.form} onSubmit={handleLogin}>
+    {/*
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
           <LockIcon fontSize="large" />
         </div>
         <Typography variant="h5" align="center">
           Login
         </Typography>
+    */}
         <TextField
           label="Username"
           variant="outlined"

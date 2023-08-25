@@ -17,13 +17,18 @@ const SignupForm = () => {
 
   return (
     <Container className={styles.container} maxWidth="xs">
-      <form onSubmit={handleSignup}>
+      <Typography className={styles.logo} variant="h5" align="center">
+        Pastgram
+      </Typography>
+      <form className={styles.form} onSubmit={handleSignup}>
+    {/*
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-          <PersonAddIcon fontSize="large" />
+        <PersonAddIcon fontSize="large" />
         </div>
         <Typography variant="h5" align="center">
-          Sign Up
+        Sign Up
         </Typography>
+  */}
         <TextField
           label="Username"
           variant="outlined"
