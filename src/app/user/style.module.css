@@ -1,0 +1,48 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+}
+
+.info {
+    flex: 0;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.avatar {
+    width: 4em;
+    height: 4em;
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.number {
+    font-size: 1em;
+}
+
+.label {
+    font-size: 0.7em;
+}
+
+.edit {
+    flex: 0;
+    width: max-content;
+    color: black;
+}
+
+.edit:hover {
+    color: white;
+}
+
+.list {
+    flex: 1;
+    background-color: gray;
+    width: 100%;
+    margin: 1em 0;
+}
