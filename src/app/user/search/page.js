@@ -2,13 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import { InputAdornment, Avatar, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import styles from './style.module.css';
+import UserList from '@/app/components/UerList';
 
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -41,14 +37,7 @@ const SearchPage = () => {
         }}
       />
 
-      <List>
-        {searchResults.map((result) => (
-          <ListItemButton key={result.id}>
-            <Avatar className={styles.avatar}>{result.name[0].toUpperCase()}</Avatar>
-            <Typography className={styles.name} variant="h6">{result.name}</Typography>
-          </ListItemButton>
-        ))}
-      </List>
+      <UserList users={searchResults}/>
     </div>
   );
 };
