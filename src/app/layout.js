@@ -1,9 +1,14 @@
+'use client'
+
 import './globals.css'
 import { StyledEngineProvider } from '@mui/material/styles';
 import { Inter } from 'next/font/google'
 import mobile from './mobile.module.css'
+import { Auth } from './components/Auth';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const inter = Inter({ subsets: ['latin'] })
+const queryClient = new QueryClient();
 
 export const metadata = {
   title: 'Create Next App',
@@ -16,7 +21,11 @@ export default function RootLayout({ children }) {
       <body className={[inter.className, mobile.container].join(' ')}>
         <div className={mobile.window}>
           <StyledEngineProvider injectFirst>
-            {children}
+            <QueryClientProvider client={queryClient}>
+              <Auth>
+                {children}
+              </Auth>
+            </QueryClientProvider>
           </StyledEngineProvider>
         </div>
       </body>

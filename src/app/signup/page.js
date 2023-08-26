@@ -1,18 +1,23 @@
 'use client'
 
 import React, { useState } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { TextField, Button, Typography, Container } from '@mui/material';
 import { logo } from '../lib/font';
 import styles from './style.module.css';
 
 const SignupForm = () => {
+  const params = useSearchParams();
+  const redirect = params.get('redirect') || '/home';
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmation, setConfirmation] = useState('');
+  const router = useRouter();
 
   const handleSignup = (e) => {
     e.preventDefault();
     // Handle signup logic here
+    router.push(redirect);
   };
 
   return (
