@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 75%;
+  width: 100%;
+  background-color: #d2ae7e29;
+  overflow-y:scroll;
+}
+
+.container::-webkit-scrollbar{
+  display: none;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin: 1.5% 1.5%;
+}
+
+.username{
+  font-size: 0.75em;
+  margin: 0 1.5%;
+  font-weight: bolder;
+}
+
+.avatar {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.goodbutton{
+  font-size: smaller;
+  align-self: flex-start;
+  padding: 0.25em;
+}
+
+.image{
+  display: flex;
+  width: 100%;
+}
+
