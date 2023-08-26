@@ -4,8 +4,11 @@ import { usePathname, useRouter } from "next/navigation";
 import { useQuery } from "react-query";
 import { active } from "../lib/auth";
 import { useEffect, useMemo } from "react";
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-export function Auth({ children }) {
+const queryClient = new QueryClient();
+
+function _Auth({ children }) {
     const { isLoading, data } = useQuery('active', active);
     const router = useRouter();
     const path = usePathname();
@@ -31,5 +34,15 @@ export function Auth({ children }) {
 
     return (
         <>{children}</>
+    );
+}
+
+export function Auth({ children }) {
+    return (
+        <QueryClientProvider client={queryClient}>
+            <_Auth>
+                {children}
+            </_Auth>
+        </QueryClientProvider>
     );
 }
