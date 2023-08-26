@@ -1,3 +1,5 @@
+'use client'
+
 import styles from "./header.module.css"
 
 export function Header() {
