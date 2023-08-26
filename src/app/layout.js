@@ -1,4 +1,5 @@
 import './globals.css'
+import { StyledEngineProvider } from '@mui/material/styles';
 import { Inter } from 'next/font/google'
 import mobile from './mobile.module.css'
 
@@ -14,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={[inter.className, mobile.container].join(' ')}>
         <div className={mobile.window}>
-          {children}
+          <StyledEngineProvider injectFirst>
+            {children}
+          </StyledEngineProvider>
         </div>
       </body>
     </html>

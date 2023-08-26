@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Container } from '@mui/material';
-import LockIcon from '@mui/icons-material/Lock';
 import { logo } from '../lib/font';
 import styles from './style.module.css';
 
