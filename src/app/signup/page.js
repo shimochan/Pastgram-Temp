@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Container } from '@mui/material';
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import { logo } from '../lib/font';
 import styles from './style.module.css';
 
 const SignupForm = () => {
@@ -17,7 +17,7 @@ const SignupForm = () => {
 
   return (
     <Container className={styles.container} maxWidth="xs">
-      <Typography className={styles.logo} variant="h5" align="center">
+      <Typography className={[logo.className, styles.logo].join(' ')} variant="h5" align="center">
         Pastgram
       </Typography>
       <form className={styles.form} onSubmit={handleSignup}>
