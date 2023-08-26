@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import UserList from "@/app/components/UerList";
+import { Title } from '@/app/components/Title';
 
 const Followee = () => {
     const [followee, setFollowee] = useState([]);
@@ -17,7 +18,10 @@ const Followee = () => {
     }, []);
 
     return (
-        <UserList users={followee}/>
+        <>
+            <Title title="フォロー中"></Title>
+            <UserList users={followee}/>
+        </>
     );
 }
 
