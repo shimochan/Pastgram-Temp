@@ -33,7 +33,7 @@ export default function Home() {
                     >
                         {images.map(src => {
                             return (
-                                <SwiperSlide >
+                                <SwiperSlide key={src}>
                                     <Image src={src} layout="responsive" width={640} height={400} alt="test_image"  />
                                 </SwiperSlide>
                             )
