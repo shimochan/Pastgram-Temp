@@ -8,5 +8,5 @@ function promisify(value) {
 }
 
 export async function active() {
-    return promisify(true);
+    return promisify(false);
 }

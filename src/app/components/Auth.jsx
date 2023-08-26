@@ -20,7 +20,7 @@ function _Auth({ children }) {
         } 
 
         if (!data) {
-            router.push(`/signup?redirect=${path}`);
+            router.push(`/signin?redirect=${path}`);
         }
     }, [isLoading, data, bypass]);
 
