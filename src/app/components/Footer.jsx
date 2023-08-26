@@ -4,7 +4,7 @@ import { Home, HomeOutlined,
          AccountCircle, AccountCircleOutlined
        } from '@mui/icons-material';
 import { getPath } from '../lib/url';
-import styles from "./Footer.module.css";
+import styles from "./footer.module.css";
 import mobile from "../mobile.module.css";
 
 const isHome = (path) => path === "/home";
