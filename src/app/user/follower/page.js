@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import UserList from "@/app/components/UerList";
+import { Title } from '@/app/components/Title';
 
 const Follower = () => {
     const [follower, setFollower] = useState([]);
@@ -17,7 +18,10 @@ const Follower = () => {
     }, []);
 
     return (
-        <UserList users={follower}/>
+        <>
+            <Title title="フォロワー"></Title>
+            <UserList users={follower}/>
+        </>
     );
 }
 
