@@ -4,6 +4,7 @@
     width: 100%;
     padding: 0.5em;
     border-bottom: 1px solid gray;
+
 }
 
 .container>*:nth-child(1) {
@@ -14,4 +15,9 @@
 }
 .container>*:nth-child(3) {
     justify-self: end;
+}
+
+.title{
+    width:max-content;
+    padding-top: 5%;
 }

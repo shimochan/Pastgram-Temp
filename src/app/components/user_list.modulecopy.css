@@ -1,0 +1,41 @@
+.avatar {
+    display: flex;
+    width: 2em;
+    height: 2em;
+}
+
+.name {
+    display: flex;
+    margin-left: 1em;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ok {
+    display: inline-block;
+    width: 20%;
+    color: white;
+    height: 2.5em;
+    background-color: rgb(43, 116, 233);
+}
+
+.no {
+    display: inline-block;
+    width: 20%;
+    color: black;
+    height: 2.5em;
+    background-color: rgb(255, 255, 255);
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+}
