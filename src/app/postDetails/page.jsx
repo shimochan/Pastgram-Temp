@@ -3,7 +3,7 @@
 import styles from "./postDetails.module.css";
 import Image from 'next/image';
 import { Avatar, Typography } from '@mui/material';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import LikeButton from './LikeButton';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -27,13 +27,17 @@ export default function PostDetails() {
 
     const { isLoading, data } = useQuery('postDetail', () => get_postDetail(1));
     const { isLoading: isDownloading, data: url } = useQuery('download', () => download(image_path, mime));
+    const [likesCounts, setLikesCounts] = useState(0);
     useEffect(() => {
         console.log(data);
+        if (data !== undefined) {
+            setLikesCounts(data.post.likes);
+        }
     }, [data]);
     useEffect(() => {
         console.log(url);
     }, [url]);
-
+    
     
     if (data !== undefined) {
         
@@ -68,12 +72,13 @@ export default function PostDetails() {
                 
                     <div className={styles.postinfo}>
                         <div className={styles.goodbutton}>
-                            懐かしイイね
-                            <LikeButton />
+                            <div>懐かしイイね</div>
+                            <LikeButton onClick={() => setLikesCounts(likesCounts + 1)}/>
+                            <div className="{styles.likes}"  style={{color: '#6da7e7', fontWeight: 'bold'}}>{likesCounts}</div>
                         </div>
 
                         <div className={styles.date}>
-                            2002/02/02
+                            {data.post.taken_at}
                         </div>
                     </div>
 
