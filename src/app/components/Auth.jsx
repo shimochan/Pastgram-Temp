@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useQuery } from "react-query";
-import { active } from "../lib/auth";
+import { active } from "../lib/auth_api";
 import { useEffect, useMemo } from "react";
 
 export function Auth({ children }) {
