@@ -30,9 +30,12 @@
 }
 
 .goodbutton{
+  display: flex;
+  align-items: center;
   font-size: smaller;
   align-self: flex-start;
   padding: 0.25em;
+  height: 30px;
 }
 
 .image{
