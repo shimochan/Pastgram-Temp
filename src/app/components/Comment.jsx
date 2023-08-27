@@ -24,7 +24,7 @@ const Comment = ({ comments, addComment }) => {
   };
 
   return (
-    <Paper elevation={3} style={{ padding: '10px' }}>
+    <Paper elevation={3} className={styles.paper}>
       <Box className={styles.oneaddcomment}>
         <Avatar className={styles.usericon} />
         <TextField
@@ -41,8 +41,8 @@ const Comment = ({ comments, addComment }) => {
       <Box mt={2}>
         {comments.map((comment, index) => (
           <div key={index} className={styles.addedcommentbox}>
-            <Avatar />
-            <div className={styles.idcomment}>
+            <Avatar className={styles.addedusericon}/>
+            <div className={styles.addedidcomment}>
               <div className={styles.userid}>userID</div>
               <span className={styles.addedcomment}>{comment}</span>
             </div>
