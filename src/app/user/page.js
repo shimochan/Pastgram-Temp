@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Grid, Avatar, Typography, Button, Card, CardMedia } from '@mui/material';
 import styles from './style.module.css';
 import { Footer } from '../components/Footer';
+import Link from "next/link";
+
 
 function ProfilePage() {
   return (
@@ -13,15 +15,27 @@ function ProfilePage() {
                     <Typography variant="h6">Username</Typography>
                 </Grid>
                 <Grid className={styles.status} item xs={3}>
+                    <Link href="/user/follower" className={styles.status}>
                     <Typography className={styles.number}>330</Typography>
                     <Typography className={styles.label}>フォロワー</Typography>
+                    </Link>
                 </Grid>
                 <Grid className={styles.status} item xs={3}>
+                    <Link href="/user/following" className={styles.status}>
                     <Typography className={styles.number}>250</Typography>
                     <Typography className={styles.label}>フォロー中</Typography>
+                    </Link>
                 </Grid>
             </Grid>
-            <Button className={styles.edit} variant="contained" color="primary">プロフィールを編集</Button>
+            <div className={styles.edisear}>
+            <Button className={styles.edit} variant="contained" color="primary">プロフィール編集</Button>
+            
+            <Button className={styles.search} variant="contained" color="primary">
+                <Link href="/user/search" >
+                ユーザー検索
+                </Link>
+            </Button>
+            </div>
             <div className={styles.list}></div>
         </Container>
         <Footer/>

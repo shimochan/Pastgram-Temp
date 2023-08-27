@@ -1,15 +1,22 @@
+'use client'
+
+
 import { Grid, Container, Typography, Button, IconButton } from "@mui/material";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import { Footer } from "../components/Footer";
-import styles from './style.module.css';
+// import { Footer } from "../components/Footer";
+import styles from './style.module.css'; 
+import Router, { useRouter } from 'next/navigation'
 
 const Post = () => {
-    return (
+
+    const router = useRouter();
+
+    return ( 
         <>
             <Grid className={styles.post} container direction="column">
                 <Grid item xs={1}>
                     <div className={styles.share}>
-                        <IconButton><ArrowBackIosNewIcon/></IconButton>
+                        <IconButton onClick={() => router.back()}><ArrowBackIosNewIcon/></IconButton>
                         <Button>share</Button>
                     </div>
                 </Grid>
@@ -27,7 +34,7 @@ const Post = () => {
                     </Container>
                 </Grid>
             </Grid>
-            <Footer/>
+            {/* <Footer/> */}
         </>
     )
 }
