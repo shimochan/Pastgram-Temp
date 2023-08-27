@@ -1,12 +1,7 @@
-const ENDPOINT = "";
-
-const resolve = path => `${ENDPOINT}${path}`;
-
-function promisify(value) {
-    const promise = new Promise((resolve, reject) => resolve(value));
-    return promise;
-}
+import { api_fetch } from "./api";
 
 export async function active() {
-    return promisify(true);
+    const res = await api_fetch("/auth/active");
+    const { active } = await res.json();
+    return active;
 }

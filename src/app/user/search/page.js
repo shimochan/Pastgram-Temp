@@ -1,24 +1,26 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useQuery } from 'react-query';
 import TextField from '@mui/material/TextField';
 import { InputAdornment, Avatar, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import UserList from '@/app/components/UerList';
+import { search_users } from '@/app/lib/page';
 
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-
+  const { isLoading, data } = useQuery(['search', searchQuery], () => search_users(searchQuery));
   useEffect(() => {
-    // Mocking search results here, replace with actual API call or data source
-    const mockResults = [
-      { id: 1, name: 'Tanaka' },
-      { id: 2, name: 'Suzuki' },
-      { id: 3, name: 'Nakayama' },
-    ];
-    setSearchResults(mockResults);
-  }, [searchQuery]);
+      console.log(data);
+  }, [data]);
+
+  function handleChange(query) {
+    if (query == searchQuery) {
+      return;
+    }
+    setSearchQuery(query);
+  }
 
   return (
     <div>
@@ -27,7 +29,7 @@ const SearchPage = () => {
         placeholder="user name"
         fullWidth
         value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
+        onChange={(e) => handleChange(e.target.value)}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
@@ -37,7 +39,11 @@ const SearchPage = () => {
         }}
       />
 
-      <UserList users={searchResults}/>
+      {data ? (
+        <UserList users={data.users}/>
+      ):(
+        <></>
+      )}
     </div>
   );
 };
