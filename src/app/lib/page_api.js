@@ -1,14 +1,19 @@
 import { api_fetch_json } from "./api";
 
+export async function get_header() {
+    const { limit, tag } = await api_fetch_json("/page/header");
+    return { limit, tag };
+}
+
 export async function get_home() {
-    const { limit, tag, thumnails } = await api_fetch_json("/page/home");
-    return { limit, tag, thumnails };
+    const { thumnails } = await api_fetch_json("/page/home");
+    return { thumnails };
 }
 
 export async function get_postDetail(user_id) {
     const params = { user_id };
-    const { limit, posts, tag, user } = await api_fetch_json("/page/post", "GET", params);
-    return { limit, posts, tag, user };
+    const { posts, user } = await api_fetch_json("/page/post", "GET", params);
+    return { posts, user };
 }
 
 export async function get_profile(user_id) {

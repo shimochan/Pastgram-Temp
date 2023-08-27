@@ -1,4 +1,4 @@
-export const ENDPOINT = "http://localhost:5000";
+export const ENDPOINT = process.env.NEXT_PUBLIC_BACKEND_API_ENDPOINT;
 
 export const resolve = path => `${ENDPOINT}${path}`;
 
