@@ -39,7 +39,6 @@ export default function Home() {
 
   return (
     <>
-      <Header />
       
       <main className={styles.flame}>
         <div className={styles.grid}>
@@ -62,8 +61,6 @@ export default function Home() {
 
         </div>
       </main>
-
-      <Footer />
     </>
   )
 }

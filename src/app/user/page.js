@@ -46,7 +46,6 @@ function ProfilePage() {
             </div>
             <div className={styles.list}></div>
         </Container>
-        <Footer/>
     </>
   );
 }
