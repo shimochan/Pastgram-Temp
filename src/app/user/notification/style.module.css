@@ -31,16 +31,25 @@
     font-size: 0.7em;
 }
 
-.edit {
-    width: 46%;
-    color: black;
-    height: max-content;
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.search {
-    width: 46%;
+.ok {
+    width: 20%;
+    color: white;
+    height: 2.5em;
+    background-color: rgb(43, 116, 233);
+}
+
+.no {
+    width: 20%;
     color: black;
-    height: max-content;
+    height: 2.5em;
+    background-color: rgb(255, 255, 255);
 }
 
 
@@ -48,7 +57,7 @@
     color: white;
 }
 
-.search:hover {
+.ok:hover {
     color: white;
 }
 

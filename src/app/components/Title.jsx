@@ -11,7 +11,7 @@ export function Title({ title }) {
   return (
     <header className={styles.container}>
       <IconButton onClick={() => router.back()}><ArrowBackIosNewIcon/></IconButton>
-      <Typography>{title}</Typography>
+      <Typography className={styles.title}>{title}</Typography>
     </header>
   );
 }

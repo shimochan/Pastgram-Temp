@@ -40,3 +40,12 @@
   width: 100%;
 }
 
+.postinfo{
+  display: flex;
+  justify-content: space-between;
+}
+
+.date{
+  font-size: smaller;
+  padding: 0.25em;
+}
