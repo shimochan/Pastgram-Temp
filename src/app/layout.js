@@ -2,6 +2,7 @@ import './globals.css'
 import { StyledEngineProvider } from '@mui/material/styles';
 import { Inter } from 'next/font/google'
 import mobile from './mobile.module.css'
+import { Auth } from './components/Auth';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
       <body className={[inter.className, mobile.container].join(' ')}>
         <div className={mobile.window}>
           <StyledEngineProvider injectFirst>
-            {children}
+            <Auth>
+              {children}
+            </Auth>
           </StyledEngineProvider>
         </div>
       </body>
