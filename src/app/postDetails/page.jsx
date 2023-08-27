@@ -10,17 +10,27 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { IconButton } from "@mui/material";
+import Link from "next/link";
+import Router, { useRouter } from 'next/navigation'
 import { get_postDetail } from '../lib/page_api';
 
 const images = ['/sample.jpg', '/sample2.jpg', '/sample3.jpg']
 
 export default function PostDetails() {
+
+    const router = useRouter();
+
     const { isLoading, data } = useQuery('postDetail', () => get_postDetail(1));
     useEffect(() => {
         console.log(data);
     }, [data]);
 
     return (
+        
+            <IconButton onClick={() => router.back()}><ArrowBackIosNewIcon/></IconButton>
+          
         <main className={styles.container}>
             <div className={styles.user}>
                 <Avatar className={styles.avatar}>H</Avatar>
