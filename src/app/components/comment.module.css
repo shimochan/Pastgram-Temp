@@ -1,0 +1,48 @@
+.onecomment{
+    display: flex;
+    justify-content: center; /* 水平方向に中央に配置 */
+    align-items: center;
+}
+
+.usericon{
+    width: 2em;
+    height: 2em;
+}
+
+.userid{
+    font-size: 0.75em;
+    margin-left: 0.5em;
+}
+
+.commentiext{
+    font-size: 1em;
+}
+
+.oneaddcomment{
+    display:flex;
+    height: auto;
+    align-items: center;
+}
+
+.addbox{
+    display: flex;
+    align-items: center;
+    margin: 2%;
+}
+
+.addedcommentbox{
+    display: flex;
+    align-items: center;
+    margin:10% 0 ;
+}
+
+.idcomment{
+    width: 100%;
+}
+
+.addedcomment{
+    font-size: 1em;
+    margin-left: 2%;
+}
+
+
