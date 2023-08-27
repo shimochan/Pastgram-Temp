@@ -50,6 +50,13 @@ export async function api_fetch(path, method="GET", params={}) {
     }
 }
 
+export async function api_fetch_with_body(path, method="GET", body=null) {
+    return fetch(resolve(path), {
+        method,
+        body
+    });
+}
+
 export async function api_fetch_json(path, method="GET", params={}) {
     const res = await api_fetch(path, method, params);
     const obj = await res.json();

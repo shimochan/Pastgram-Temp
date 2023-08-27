@@ -22,14 +22,14 @@ function ProfilePage() {
         <>
             
             <Container className={styles.profile}>
-            <div className={styles.logo}>
-            <div className={[logo.className, styles.logo].join(' ')} variant="h5" align="center">
-                Pastgram
-            </div>
-            </div>
-            <Link href="/user/authentication">
-            <IconButton className={styles.alart}><NotificationsOutlinedIcon/></IconButton>
-            </Link>    
+              <div className={styles.logo}>
+                <div className={[logo.className, styles.logo].join(' ')} variant="h5" align="center">
+                    Pastgram
+                </div>
+              </div>
+              <Link href="/user/authentication">
+                <IconButton className={styles.alart}><NotificationsOutlinedIcon/></IconButton>
+              </Link>    
                 <Grid className={styles.info} container spacing={3}>
                     <Grid item xs={6}>
                         <Avatar className={styles.avatar}>H</Avatar>
