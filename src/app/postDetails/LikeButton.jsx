@@ -26,7 +26,7 @@ function LikeButton() {
     setClicked(false);
   };
 
-  const size = clicked ? '20px' : '24px';
+  const size = clicked ? '18px' : '22px';
   const style = {
     width: size,
     height: size
@@ -37,7 +37,7 @@ function LikeButton() {
       style={{
         display: 'inline-block',
         cursor: 'pointer',
-        paddingLeft: '5px',
+        padding: '0 5px',
         //fontSize: clicked ? '18px' : '30px',
         //padding: clicked ? '5px' : '0px',
         transition: 'font-size 0.1s, color 0.3s',

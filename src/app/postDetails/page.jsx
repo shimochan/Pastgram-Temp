@@ -68,12 +68,13 @@ export default function PostDetails() {
                 
                     <div className={styles.postinfo}>
                         <div className={styles.goodbutton}>
-                            懐かしイイね
+                            <div>懐かしイイね</div>
                             <LikeButton />
+                            <div className="{styles.likes}"  style={{color: '#6da7e7', fontWeight: 'bold'}}>{data.post.likes}</div>
                         </div>
 
                         <div className={styles.date}>
-                            2002/02/02
+                            {data.post.taken_at}
                         </div>
                     </div>
 

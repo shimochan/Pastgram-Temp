@@ -30,12 +30,19 @@
 }
 
 .goodbutton{
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: max-content 30px max-content;
   font-size: smaller;
   align-self: flex-start;
   padding: 0.25em;
-  height: 30px;
+  height: 40px;
+}
+
+.likes{
+  font-size: smaller;
+  padding: 0.25em;
+  color: #6da7e7;
 }
 
 .image{
