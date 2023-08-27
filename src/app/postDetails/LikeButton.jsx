@@ -4,14 +4,14 @@ import React, { useState } from 'react';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 
-function LikeButton() {
-  // const [liked, setLiked] = useState(false);
+function LikeButton({ onClick }) {
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
 
   const handleLikeClick = () => {
     setHovered(true);
     setClicked(true);
+    onClick();
     setTimeout(() => {
       setClicked(false);
     }, 100);
