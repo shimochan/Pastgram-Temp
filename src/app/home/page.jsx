@@ -1,10 +1,12 @@
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import styles from "./home.module.css";
+'use client'
+
 import Image from 'next/image';
+import { useEffect } from 'react';
+import { useQuery } from 'react-query';
+import { get_home } from '../lib/page_api';
+import styles from "./home.module.css";
 
 const ITEMS = [
-
   {
     src: "/sample.jpg",
     date:"2015/11/11",
@@ -25,19 +27,20 @@ const ITEMS = [
     date:"2015/11/11",
     id:3
   },
-
 ];
  
 export default function Home() {
-  return (
-    <>
-      <Header />
-      <main className={styles.flame}>
-        <div className={styles.grid}>
+  const { isLoading, data } = useQuery('home', get_home);
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
-          {ITEMS.map((item) => {
-            const index = Math.floor(Math.random()*8) + 1;
-            return(
+  return (
+    <main className={styles.flame}>
+      <div className={styles.grid}>
+        {ITEMS.map((item) => {
+          const index = Math.floor(Math.random()*8) + 1;
+          return (
             <div key = {item.id} className={styles[`square${index}`]} >
               <Image src="/pin.png" alt="pin" width="40" height="40" className={styles.pin} />
               <Image src={item.src} alt="photo" width="0" height="0" sizes="100vw" className={styles.photo} />
@@ -45,14 +48,9 @@ export default function Home() {
                 {item.date}
               </div>
             </div>
-            );
-
-          })}
-
-        </div>
-      </main>
-
-      <Footer />
-    </>
-  )
+          );
+        })}
+      </div>
+    </main>
+  );
 }
