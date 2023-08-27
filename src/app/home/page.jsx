@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { get_home } from '../lib/page_api';
 import styles from "./home.module.css";
-import Image from 'next/image';
 import Link from "next/link";
 
 
@@ -39,32 +38,26 @@ export default function Home() {
   }, [data]);
 
   return (
-    <>
-      <Header />
-      
-      <main className={styles.flame}>
-        <div className={styles.grid}>
+    <main className={styles.flame}>
+      <div className={styles.grid}>
 
-          {ITEMS.map((item) => {
-            const index = Math.floor(Math.random() * 8) + 1;
-            return (
-              <Link href='/postDetails' key={item.id}>
-                <div  className={styles[`square${index}`]} >
-                  <Image src="/pin.png" alt="pin" width="40" height="40" className={styles.pin} />
-                  <Image src={item.src} alt="photo" width="0" height="0" sizes="100vw" className={styles.photo} />
-                  <div className={styles.date}>
-                    {item.date}
-                  </div>
+        {ITEMS.map((item) => {
+          const index = Math.floor(Math.random() * 8) + 1;
+          return (
+            <Link href='/postDetails' key={item.id}>
+              <div  className={styles[`square${index}`]} >
+                <Image src="/pin.png" alt="pin" width="40" height="40" className={styles.pin} />
+                <Image src={item.src} alt="photo" width="0" height="0" sizes="100vw" className={styles.photo} />
+                <div className={styles.date}>
+                  {item.date}
                 </div>
-              </Link>
-            );
+              </div>
+            </Link>
+          );
 
-          })}
+        })}
 
-        </div>
-      </main>
-
-      <Footer />
-    </>
+      </div>
+    </main>
   )
 }
