@@ -20,47 +20,91 @@
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2,1fr);
-
-
 }
 
 .square1 {
   display: flex;
+  justify-content: center;
   background-color: white;
   width: 130px;
-  height: 160px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-  transform: rotate(-2deg);
+  height: 170px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  transform: rotate(-1deg);
   position: relative;
 }
 
 .square2 {
   display: flex;
+  justify-content: center;
   background-color: white;
   width: 130px;
-  height: 160px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-  transform: rotate(3deg);
+  height: 170px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  transform: rotate(1deg);
   position: relative;
 }
 
 .square3 {
   display: flex;
+  justify-content: center;
   background-color: white;
   width: 130px;
-  height: 160px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-  transform: rotate(-3deg);
+  height: 170px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  transform: rotate(-2deg);
   position: relative;
 }
 
 .square4 {
   display: flex;
+  justify-content: center;
   background-color: white;
   width: 130px;
-  height: 160px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  height: 170px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
   transform: rotate(2deg);
+  position: relative;
+}
+
+.square5 {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 130px;
+  height: 170px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  transform: rotate(-3deg);
+  position: relative;
+}
+
+.square6 {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 130px;
+  height: 170px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  transform: rotate(3deg);
+  position: relative;
+}
+
+.square7{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 130px;
+  height: 170px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.square8 {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 130px;
+  height: 170px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
   position: relative;
 }
 
@@ -70,4 +114,26 @@
   left:40%;
   transform : translate(-50%, -70%);
  
+}
+
+.photoflame{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+ 
+}
+
+.photo{
+  width: 110px;
+  height: 110px;
+  margin-top: 13px;
+}
+
+.date{
+  position: absolute;
+  bottom: 0;
+  text-align: end;
+  width: 100%;
+  padding-right: 3px;
+  font-size: 0.75em;
 }
