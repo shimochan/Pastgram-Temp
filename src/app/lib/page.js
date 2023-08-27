@@ -41,8 +41,8 @@ export async function update_profile(name, profile_name, icon_path) {
     return { user };
 }
 
-export async function upload_post(image_path, create_at) {
-    const params = { image_path, create_at };
+export async function upload_post(image_path, taken_at) {
+    const params = { image_path, taken_at };
     const { post } = await api_fetch_json("/page/post", "POST", params);
     return { post };
 }
