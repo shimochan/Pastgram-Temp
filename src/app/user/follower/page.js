@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import UserList from "@/app/components/UerList";
 import { Title } from '@/app/components/Title';
-import { get_follower } from '@/app/lib/page';
+import { get_follower } from '@/app/lib/page_api';
 
 const Follower = () => {
     const [follower, setFollower] = useState([]);

@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
-import { get_postDetail } from '../lib/page';
+import { get_postDetail } from '../lib/page_api';
 
 const images = ['/sample.jpg', '/sample2.jpg', '/sample3.jpg']
 

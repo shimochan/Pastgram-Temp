@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { Container, Grid, Avatar, Typography, Button, Card, CardMedia } from '@mui/material';
-import { get_profile } from '../lib/page';
+import { get_profile } from '../lib/page_api';
 import styles from './style.module.css';
 
 function ProfilePage() {
