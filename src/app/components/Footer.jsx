@@ -1,13 +1,15 @@
 import { BottomNavigation, BottomNavigationAction } from '@mui/material';
-import { Home, HomeOutlined,
-         AddAPhoto, AddAPhotoOutlined,
-         AccountCircle, AccountCircleOutlined
-       } from '@mui/icons-material';
+import {
+  Home, HomeOutlined,
+  AddAPhoto, AddAPhotoOutlined,
+  AccountCircle, AccountCircleOutlined
+} from '@mui/icons-material';
 import { getPath } from '../lib/url';
 import styles from "./footer.module.css";
 import mobile from "../mobile.module.css";
+import Link from "next/link";
 
-const isHome = (path) => path === "/home";
+const isHome = (path) => path === "/home" && "/postDetails";
 const isAdd = (path) => path === "/add";
 const isUser = (path) => path === "/user";
 
@@ -21,9 +23,15 @@ export function Footer() {
   return (
     <footer className={[styles.container, mobile.window_width].join(' ')}>
       <BottomNavigation showLabels className={styles.icon}>
-        <BottomNavigationAction style={{color:"black"}} icon={<HomeIcon />} />
-        <BottomNavigationAction style={{color:"black"}} icon={<AddIcon />} />
-        <BottomNavigationAction style={{color:"black"}} icon={<UserIcon />} />
+        <Link href='/home' className={styles.icon}>
+          <BottomNavigationAction style={{ color: "black" }} icon={<HomeIcon />} />
+        </Link>
+        <Link href="/post" className={styles.icon}>
+          <BottomNavigationAction style={{ color: "black" }} icon={<AddIcon />} />
+        </Link>
+        <Link href="/user" className={styles.icon}>
+          <BottomNavigationAction style={{ color: "black" }} icon={<UserIcon />} />
+        </Link>
       </BottomNavigation>
     </footer>
   );

@@ -3,8 +3,9 @@
   flex-direction: column;
   height: 75%;
   width: 100%;
-  background-color: #d2ae7e29;
+  background-color: #d2ae7e30;
   overflow-y:scroll;
+  margin-bottom: 20%;
 }
 
 .container::-webkit-scrollbar{
@@ -30,9 +31,19 @@
 }
 
 .goodbutton{
+  display: grid;
+  align-items: center;
+  grid-template-columns: max-content 30px max-content;
   font-size: smaller;
   align-self: flex-start;
   padding: 0.25em;
+  height: 40px;
+}
+
+.likes{
+  font-size: smaller;
+  padding: 0.25em;
+  color: #6da7e7;
 }
 
 .image{
@@ -40,3 +51,12 @@
   width: 100%;
 }
 
+.postinfo{
+  display: flex;
+  justify-content: space-between;
+}
+
+.date{
+  font-size: smaller;
+  padding: 0.25em;
+}

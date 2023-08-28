@@ -4,15 +4,29 @@
     align-items: center;
 }
 
+.paper{
+    background-color:#d2ae7e15;
+    padding: 10px;
+
+}
+
 .usericon{
     width: 2em;
     height: 2em;
+}
+
+.addedusericon{
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .userid{
     font-size: 0.75em;
     margin-left: 0.5em;
 }
+
+
+
 
 .commentiext{
     font-size: 1em;
@@ -38,11 +52,12 @@
 
 .idcomment{
     width: 100%;
+    margin-left: 2%;
 }
 
 .addedcomment{
     font-size: 1em;
-    margin-left: 2%;
+    margin-left: 0.5em;
 }
 
 

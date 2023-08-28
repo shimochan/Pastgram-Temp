@@ -4,6 +4,8 @@
     align-items: center; /* 垂直方向に中央に配置 */
     height: 10%; /* ビューポートの高さいっぱいに表示 */
     border-top: 1px solid rgba(128, 128, 128, 0.495);
+    position: fixed;
+    bottom:0;
 }
 
 .icon{

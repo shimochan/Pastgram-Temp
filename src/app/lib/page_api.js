@@ -10,10 +10,10 @@ export async function get_home() {
     return { thumnails };
 }
 
-export async function get_postDetail(user_id) {
-    const params = { user_id };
-    const { posts, user } = await api_fetch_json("/page/post", "GET", params);
-    return { posts, user };
+export async function get_postDetail(post_id) {
+    const params = { post_id };
+    const {post} = await api_fetch_json("/page/postdetail", "GET", params);
+    return {post};
 }
 
 export async function get_profile(user_id) {
@@ -51,3 +51,4 @@ export async function upload_post(image_path, taken_at) {
     const { post } = await api_fetch_json("/page/post", "POST", params);
     return { post };
 }
+

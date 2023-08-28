@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import { InputAdornment, Avatar, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import UserList from '@/app/components/UerList';
+import { Title } from '@/app/components/Title';
 import { search_users } from '@/app/lib/page_api';
 
 const SearchPage = () => {
@@ -23,7 +24,10 @@ const SearchPage = () => {
   }
 
   return (
+    <>
+    <Title title="ユーザーを探す"></Title>
     <div>
+      
       <TextField
         variant="outlined"
         placeholder="user name"
@@ -45,6 +49,7 @@ const SearchPage = () => {
         <></>
       )}
     </div>
+    </>
   );
 };
 

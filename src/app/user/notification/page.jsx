@@ -1,0 +1,37 @@
+'use client'
+
+import { useState, useEffect } from 'react';
+import { useQuery } from 'react-query';
+import UserRequest from "@/app/components/UserRequest";
+import { Title } from '@/app/components/Title';
+import { get_follower } from '@/app/lib/page_api';
+import { Container, Grid, Avatar, Typography, Button, Card, CardMedia } from '@mui/material';
+import styles from './style.module.css';
+
+const Follower = () => {
+    const [follower, setFollower] = useState([]);
+    const { isLoading, data } = useQuery('followee', () => get_follower(1));
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
+
+    useEffect(() => {
+        // Mocking search results here, replace with actual API call or data source
+        const mockResults = [
+        { id: 1, name: 'Tanaka' },
+        { id: 2, name: 'Suzuki' },
+        { id: 3, name: 'Nakayama' },
+        ];
+        setFollower(mockResults);
+    }, []);
+
+    return (
+        <>
+            <Title title="フォロ―リクエスト" ></Title>
+            <UserRequest users={follower}/>
+            
+        </>
+    );
+}
+
+export default Follower;
