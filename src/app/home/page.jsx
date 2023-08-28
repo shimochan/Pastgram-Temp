@@ -1,13 +1,17 @@
 'use client'
 
-import Image from 'next/image';
 import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { get_home } from '../lib/page_api';
 import styles from "./home.module.css";
 import Link from "next/link";
+import Image from 'next/image';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 
-
+const images = ['/sample.jpg', '/sample2.jpg', '/sample3.jpg']
 const ITEMS = [
   {
     src: "/sample.jpg",
@@ -38,7 +42,20 @@ export default function Home() {
   }, [data]);
 
   return (
-    <main className={styles.flame}>
+    <>
+
+    <div className={styles.flame2}>
+    <Swiper
+        pagination={{
+            dynamicBullets: true,
+        }}
+        modules={[Pagination]}
+        className={styles.flame2}
+    >
+        {images.map(src => {
+            return (
+                <SwiperSlide key={src}>
+                <main className={styles.flame}>
       <div className={styles.grid}>
       {ITEMS.map((item) => {
         const index = Math.floor(Math.random() * 8) + 1;
@@ -55,6 +72,14 @@ export default function Home() {
         );
       })}
       </div>
+
     </main>
+                </SwiperSlide>
+            )
+        })}
+    </Swiper>
+</div>
+</>
+
   );
 }
