@@ -3,7 +3,7 @@
 import styles from "./postDetails.module.css";
 import Image from 'next/image';
 import { Avatar, Typography } from '@mui/material';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import LikeButton from './LikeButton';
 import { Swiper, SwiperSlide } from 'swiper/react';
