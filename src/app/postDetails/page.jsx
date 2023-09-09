@@ -58,7 +58,7 @@ export default function PostDetails() {
                     </div>
 
 
-                    <Image src={url} layout="responsive" width={640} height={400} alt="test_image" />
+                    <Image src={"/sample2.jpg"} layout="responsive" width={640} height={400} alt="test_image" />
                     {/* <Swiper
                             pagination={{
                                 dynamicBullets: true,
