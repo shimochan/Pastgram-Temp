@@ -24,8 +24,6 @@ export async function Header() {
   const date = new Date(limit);
   const now = new Date();
   const { days, hours, minutes } = calculateDateDifference(now, date);
-  console.log(limit)
-  console.log(days, hours, minutes)
 
   let message = "あと";
   if (Math.abs(days) > 1) {

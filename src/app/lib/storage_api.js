@@ -8,8 +8,8 @@ export async function upload(image) {
     return image_path;
 }
 
-export async function download(image_path, mime) {
-    const params = { image_path, mime };
+export async function download(image_path) {
+    const params = { image_path };
     const res = await api_fetch("/storage/download", "GET", params);
     const blob = await res.blob();
     const url = URL.createObjectURL(blob);

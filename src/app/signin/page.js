@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { TextField, Button, Typography, Container } from '@mui/material';
 import { logo } from '../lib/font';
 import styles from './style.module.css';
+import { login } from '../lib/auth_api';
 
 const LoginForm = () => {
   const params = useSearchParams();
@@ -13,10 +14,14 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-    router.push(redirect);
+    const result = await login(username, password);
+    if (result) {
+      router.push(redirect);
+    } else {
+      alert("ログインに失敗しました。");
+    }
   };
 
   const handleSignUp = () => {

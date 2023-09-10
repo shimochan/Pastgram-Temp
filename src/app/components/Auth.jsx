@@ -3,7 +3,9 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useQuery } from "react-query";
 import { active } from "../lib/auth_api";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, createContext } from "react";
+
+export const ActiveContext = createContext();
 
 export function Auth({ children }) {
     const { isLoading, data } = useQuery('active', active);
@@ -21,15 +23,27 @@ export function Auth({ children }) {
         }
     }, [isLoading, data, bypass]);
 
-    if (isLoading) {
-        return (<pre>Loading</pre>);
-    }
+    const content = useMemo(() => {
+        if (isLoading) {
+            return (<pre>Loading</pre>);
+        }
 
-    if (!data && !bypass) {
-        return (<pre>Redirect to login</pre>);
-    }
+        if (!data && !bypass) {
+            return (<pre>Redirect to login</pre>);
+        }
+
+        return (
+            <>{children}</>
+        );
+    }, [isLoading, data, bypass, children]);
+
+    const isActive = useMemo(() => (
+        !isLoading && !!data
+    ), [isLoading, data]);
 
     return (
-        <>{children}</>
+        <ActiveContext.Provider value={isActive}>
+            {content}
+        </ActiveContext.Provider>
     );
 }

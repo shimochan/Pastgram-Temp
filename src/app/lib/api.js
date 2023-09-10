@@ -26,27 +26,28 @@ function to_formData(params) {
     return formData;
 }
 
-async function _fetch(url, method, params) {
+export async function api_fetch(path, method="GET", params={}) {
+    const url = resolve(path);
+
     switch (method) {
         case "GET":
             const queryString = to_queryString(params);
             return fetch(`${url}?${queryString}`, {
                 method: "GET",
-            })
+                credentials: 'include'
+            }).catch((error) => {
+                console.log(error);
+                throw error;
+            });
         case "POST":
             return fetch(url, {
                 method: "POST",
-                body: to_formData(params)
+                body: to_formData(params),
+                credentials: 'include'
+            }).catch((error) => {
+                console.log(error);
+                throw error;
             });
-    }
-}
-
-export async function api_fetch(path, method="GET", params={}) {
-    switch (path) {
-        case "/auth/active":
-            return json({ active: true });
-        default:
-            return _fetch(resolve(path), method, params);
     }
 }
 
