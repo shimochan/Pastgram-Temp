@@ -44,42 +44,44 @@ export default function Home() {
   return (
     <>
 
-    <div className={styles.flame2}>
-    <Swiper
-        pagination={{
+      <div className={styles.flameAll}>
+        <Swiper
+          pagination={{
             dynamicBullets: true,
-        }}
-        modules={[Pagination]}
-        className={styles.flame2}
-    >
-        {images.map(src => {
+          }}
+          modules={[Pagination]}
+          className={styles.flame2}
+        >
+          {images.map(src => {
             return (
-                <SwiperSlide key={src}>
+              <SwiperSlide key={src} >
+                <div className={styles.flameAll2}>
                 <main className={styles.flame}>
-      <div className={styles.grid}>
-      {ITEMS.map((item) => {
-        const index = Math.floor(Math.random() * 8) + 1;
-        return (
-          <Link href='/postDetails' key={item.id}>
-            <div  className={styles[`square${index}`]} >
-              <Image src="/pin.png" alt="pin" width="40" height="40" className={styles.pin} />
-              <Image src={item.src} alt="photo" width="0" height="0" sizes="100vw" className={styles.photo} />
-              <div className={styles.date}>
-                {item.date}
-              </div>
-            </div>
-          </Link>
-        );
-      })}
-      </div>
+                  <div className={styles.grid}>
+                    {ITEMS.map((item) => {
+                      const index = Math.floor(Math.random() * 8) + 1;
+                      return (
+                        <Link href='/postDetails' key={item.id}>
+                          <div className={styles[`square${index}`]} >
+                            <Image src="/pin.png" alt="pin" width="40" height="40" className={styles.pin} />
+                            <Image src={item.src} alt="photo" width="0" height="0" sizes="100vw" className={styles.photo} />
+                            <div className={styles.date}>
+                              {item.date}
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
 
-    </main>
-                </SwiperSlide>
+                </main>
+                </div>
+              </SwiperSlide>
             )
-        })}
-    </Swiper>
-</div>
-</>
+          })}
+        </Swiper>
+      </div>
+    </>
 
   );
 }
